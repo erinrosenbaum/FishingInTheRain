@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "87713984809",
+    "project_id": "firebase-fishingintherain"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87713984809:android:72d6093c0c07b127",
+        "android_client_info": {
+          "package_name": "com.example.erinrosenbaum.fishingintherain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87713984809-uah3fc6eg7nda4em1aplblg1t09ta51i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.erinrosenbaum.fishingintherain",
+            "certificate_hash": "8e0a2c582ceacb84698ae51b59d347abfa4e77d7"
+          }
+        },
+        {
+          "client_id": "87713984809-5p9u4vk19bdnvskf10er3lp6k8fmsisf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzTgGlBl55J7HMsgZ23PPFiySVSQc9PJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

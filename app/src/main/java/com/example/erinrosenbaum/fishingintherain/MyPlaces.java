@@ -1,6 +1,7 @@
 package com.example.erinrosenbaum.fishingintherain;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -10,21 +11,25 @@ import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.identity.intents.Address;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MyPlaces extends AppCompatActivity {
+public class MyPlaces extends AppCompatActivity implements View.OnClickListener {
 
     static ArrayList<String> places = new ArrayList<>();
     static ArrayList<LatLng> locations = new ArrayList<>();
@@ -32,6 +37,8 @@ public class MyPlaces extends AppCompatActivity {
 
     LocationManager locationManager;
     LocationListener locationListener;
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -53,7 +60,12 @@ public class MyPlaces extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_my_places);
+
+        findViewById(R.id.removeAll).setOnClickListener(this);
 
         ListView listView = (ListView) findViewById(R.id.listView);
 
@@ -153,6 +165,53 @@ public class MyPlaces extends AppCompatActivity {
         else {
             // permission has been granted
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        }
+    }
+
+
+    public void removeAll(){
+        // https://stackoverflow.com/questions/3053761/reload-activity-in-android
+
+        Toast toast = Toast.makeText(this, "Removing saved locations", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+
+        SharedPreferences sharedPreferences = this.getSharedPreferences("com.example.erinrosenbaum.fishingintherain", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
+        finish();
+        startActivity(getIntent());
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.removeAll:
+
+                //https://stackoverflow.com/questions/38411879/alert-confirmation-dialog-android
+                Builder alert = new Builder(MyPlaces.this);
+                alert.setTitle("Delete All Locations");
+                alert.setMessage("Are you sure you want to delete?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        removeAll();
+                    }
+                });
+
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.show();
+                break;
         }
     }
 }

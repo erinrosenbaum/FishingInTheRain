@@ -204,9 +204,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (address == "") {
 
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm yyyy-MM-dd");
+            //SimpleDateFormat sdf = new SimpleDateFormat("HH:mm yyyy-MM-dd");
 
-            address = sdf.format(new Date());
+            //address = sdf.format(new Date());
+            address = latLng.toString();
 
         }
 

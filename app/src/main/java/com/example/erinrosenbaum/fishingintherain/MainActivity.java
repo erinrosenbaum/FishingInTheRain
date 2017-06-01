@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
                 else {
                     Toast toast = Toast.makeText(this, "Must sign-in to access this feature", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.setGravity(Gravity.CENTER, 0, 50);
                     toast.show();
                 }
                 break;
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
                 else {
                     Toast toast = Toast.makeText(this, "Must sign-in to access this feature", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.setGravity(Gravity.CENTER, 0, -100);
                     toast.show();
                 }
                 break;

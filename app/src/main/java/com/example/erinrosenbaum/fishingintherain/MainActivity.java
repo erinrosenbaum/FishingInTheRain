@@ -1,3 +1,8 @@
+// references: Much of this code was taken from the following 3 tutorials:
+// https://www.udemy.com/complete-android-n-developer-course/learn/v4/t/lecture/5689972?start=0
+// https://www.udemy.com/master-android-7-nougat-java-app-development-step-by-step/learn/v4/t/lecture/5601520?start=0
+// https://www.lynda.com/Google-Play-Services-tutorials/Use-Google-Sign/474086/503692-4.html
+
 package com.example.erinrosenbaum.fishingintherain;
 
         import android.content.Intent;

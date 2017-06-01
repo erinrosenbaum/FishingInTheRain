@@ -91,6 +91,11 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(go);
     }
 
+    private void goToYouTubeActivity() {
+        Intent go = new Intent(MainActivity.this, YouTubeActivity.class);
+        startActivity(go);
+    }
+
     // checks to see if sign-in was successful
     public void signInResultHandler(GoogleSignInResult result) {
         if (result.isSuccess()) {
@@ -146,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements
         findViewById(R.id.btnDisconnect).setOnClickListener(this);
         findViewById(R.id.goToMaps).setOnClickListener(this);
         findViewById(R.id.goToPlaces).setOnClickListener(this);
+        findViewById(R.id.goToYouTube).setOnClickListener(this);
 
 
 
@@ -210,6 +216,16 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.btnSignOut:
                 signOut();
                 break;
+            case R.id.goToYouTube:
+                if (myGlobalVars.signedIn == 226){
+                    goToYouTubeActivity();
+                }
+                else {
+                    Toast toast = Toast.makeText(this, "Must sign-in to access this feature", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, -385);
+                    toast.show();
+                }
+                break;
             case R.id.btnDisconnect:
                 disconnect();
                 break;
@@ -219,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
                 else {
                     Toast toast = Toast.makeText(this, "Must sign-in to access this feature", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 50);
+                    toast.setGravity(Gravity.CENTER, 0, -140);
                     toast.show();
                 }
                 break;
@@ -229,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
                 else {
                     Toast toast = Toast.makeText(this, "Must sign-in to access this feature", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, -100);
+                    toast.setGravity(Gravity.CENTER, 0, -385);
                     toast.show();
                 }
                 break;

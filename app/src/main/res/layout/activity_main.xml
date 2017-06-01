@@ -13,9 +13,9 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
         android:id="@+id/goToMaps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:text="See The Map" />
+        android:text="See The Map"
+        android:layout_below="@+id/goToPlaces"
+        android:layout_alignParentStart="true" />
 
     <TextView
     android:layout_width="wrap_content"
@@ -41,9 +41,9 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
     android:id="@+id/tvDispNameLabel"
     android:textStyle="bold"
     android:textSize="24sp"
+    android:layout_marginTop="10dp"
     android:layout_below="@+id/tvStatusLabel"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="19dp" />
+    android:layout_alignParentStart="true" />
 
 <TextView
     android:layout_width="wrap_content"
@@ -77,7 +77,7 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Disconnect"
-    android:layout_above="@+id/goToPlaces"
+    android:layout_below="@+id/btnSignOut"
     android:layout_alignParentStart="true" />
 
 <Button
@@ -85,7 +85,7 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Sign Out"
-    android:layout_above="@+id/btnDisconnect"
+    android:layout_below="@+id/btnSignIn"
     android:layout_alignParentStart="true" />
 
 <com.google.android.gms.common.SignInButton
@@ -93,17 +93,24 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="visible"
-    android:layout_above="@+id/btnSignOut"
+    android:layout_marginTop="18dp"
+    android:layout_below="@+id/tvEmail"
     android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/goToPlaces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/goToMaps"
-        android:layout_toEndOf="@+id/tvEmail"
         android:text="See My Places"
+        android:layout_below="@+id/btnDisconnect"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/goToYouTube"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goToMaps"
+        android:text="YouTube App" />
 
 </RelativeLayout>
 

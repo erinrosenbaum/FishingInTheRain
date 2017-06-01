@@ -1,5 +1,6 @@
 package com.example.erinrosenbaum.fishingintherain;
 
+import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ public class YouTubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         //setContentView(R.layout.activity_you_tube);
         //ConstraintLayout constraintLayout = (ConstraintLayout) findViewById(R.id.activity_you_tube);
         ConstraintLayout layout = (ConstraintLayout) getLayoutInflater().inflate(R.layout.activity_you_tube, null);
+        // https://stackoverflow.com/questions/7378636/setting-background-colour-of-android-layout-element
+        layout.setBackgroundColor(Color.BLACK);
         setContentView(layout);
 
         //Button button1 = new Button(this);

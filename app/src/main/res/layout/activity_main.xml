@@ -112,6 +112,14 @@ tools:context="com.example.erinrosenbaum.fishingintherain.MainActivity">
         android:layout_below="@+id/goToMaps"
         android:text="YouTube App" />
 
+    <Button
+        android:id="@+id/goFishing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:layout_alignBottom="@+id/tvEmailLabel"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
 
 

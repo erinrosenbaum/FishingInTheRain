@@ -43,7 +43,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".MyPlaces" />
-        <activity android:name=".YouTubeActivity"></activity>
+        <activity android:name=".YouTubeActivity" />
+        <activity android:name=".fishingActivity"></activity>
     </application>
 
 </manifest>

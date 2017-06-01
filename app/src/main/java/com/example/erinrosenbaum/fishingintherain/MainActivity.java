@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements
         findViewById(R.id.goToMaps).setOnClickListener(this);
         findViewById(R.id.goToPlaces).setOnClickListener(this);
         findViewById(R.id.goToYouTube).setOnClickListener(this);
+        findViewById(R.id.goFishing).setOnClickListener(this);
 
 
 
@@ -213,6 +214,9 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.btnSignIn:
                 startSignIn();
                 break;
+            case R.id.goFishing:
+                goFishing();
+                break;
             case R.id.btnSignOut:
                 signOut();
                 break;
@@ -252,6 +256,11 @@ public class MainActivity extends AppCompatActivity implements
 
 
         }
+    }
+
+    private void goFishing() {
+        Intent go = new Intent(MainActivity.this, fishingActivity.class);
+        startActivity(go);
     }
 
 }
